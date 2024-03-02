@@ -6,7 +6,8 @@ $batteryModeThreshold = [int]$batteryModeThreshold
 
 $batteryModeStartTime = $null
 
-$userScript = Read-Host "Enter the path to your script (e.g., C:\Scripts\MyScript.ps1)"
+$userScriptA = Read-Host "Enter the path to your script to run when switched to battery (e.g., C:\Scripts\MyScript.ps1)"
+$userScriptB = Read-Host "Enter the path to your script to run before shutdown (e.g., C:\Scripts\MyScript.ps1)"
 
 $logFile = Read-Host "Enter the path to your log file (leave blank for on-screen logging only)"
 
@@ -36,9 +37,10 @@ while ($true) {
         if ($batteryModeStartTime -eq $null) {
             $batteryModeStartTime = Get-Date
             LogMessage "Switched to battery mode."
+            & $userScriptA
         } elseif (((Get-Date) - $batteryModeStartTime).TotalMinutes -ge $batteryModeThreshold) {
             LogMessage "Battery mode duration exceeded threshold. Running user script and shutting down."
-            & $userScript
+            & $userScriptB
             Stop-Computer -Force
             break
         }
