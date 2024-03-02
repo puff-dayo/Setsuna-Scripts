@@ -3,9 +3,15 @@ A personal collection of scripts for automation tasks.
 
 <br><br>
 
-**BatteryModeAutoShutdown.ps1**
+**> BatteryModeAutoShutdown.ps1**
 
 Monitors the power status of the system and automatically shuts it down if it remains on battery power for a specified duration, also provides options for logging events to a file or displaying them on-screen, and can execute a user-defined script before shutdown.
+
+<br>
+
+**> BatteryBeepAndTTSWarning.ps1**
+
+Plays beeps and uses Windows built-in TTS to warn that the power mode has switched to battery.
 
 <br><br>
 
