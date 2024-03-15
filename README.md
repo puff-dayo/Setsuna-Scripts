@@ -13,6 +13,12 @@ Monitors the power status of the system and automatically shuts it down if it re
 
 Plays beeps and uses Windows built-in TTS to warn that the power mode has switched to battery.
 
+<br>
+
+**> ImportFlypy.ps1**
+
+Import Flypy Shuangpin into Microsoft Input Method.
+
 <br><br>
 
 ## Tested Environment
